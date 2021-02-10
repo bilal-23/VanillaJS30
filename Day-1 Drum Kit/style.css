@@ -1,0 +1,57 @@
+html {
+  font-size: 10px;
+  background: url('./bg.jpg.jpg') bottom center;
+  background-size: cover;
+}
+
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.keys {
+  display: flex;
+  flex: 1;  
+  /* flex: <positive-number>
+Equivalent to flex: <positive-number> 1 0. Makes the flex item flexible and sets the flex basis to zero, resulting in an item that receives the specified proportion of the free space in the flex container. If all items in the flex container use this pattern, their sizes will be proportional to the specified flex factor.
+By default, flex items won’t shrink below their minimum content size (the length of the longest word or fixed-size element). To change this, set the min-width or min-height property. (See §4.5 Automatic Minimum Size of Flex Items.) */
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.key {
+  
+  /* border: .4rem solid black; */
+  border-radius: 1rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all .07s ease;
+ min-width: 10rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  background: rgba(0,0,0,0.4);
+  text-shadow: 0 0 .5rem black;
+  border: 3px solid rgb(211, 12, 12);
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
+}
