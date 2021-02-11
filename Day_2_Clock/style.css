@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap');
+html{
+    background: linear-gradient(to right top, #65dfc9, #0b191b);
+    text-align: center;
+    font-size: 10px;
+    background-size: cover;
+    font-family: Helvetica, sans-serif;
+}
+body{
+    margin: 0;  
+    font-size: 2rem;
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+}
+.clock{
+    width: 30rem;
+    height: 30rem;
+    border: 10px solid white ;
+    border-radius: 50%;
+    margin: 100px auto;
+    position: relative;
+    padding: 2rem;
+    
+    /* background: linear-gradient(to right top, #65dfc9, #13363b); */
+    /* backdrop-filter: blur(5rem); */
+}
+.clock-face{
+    position: relative;
+    width: 100%;
+    /* border: 2px solid red; */
+    height: 100%;
+    transform: translateY(-4px); /* account for the height of the clock hands */
+}
+.hand {
+    width: 50%;
+    height: 5px;
+    background:#13363b;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%; /*It makes the hand to rotate from rightmost end as origin, by default it is 50% i.e centre*/
+    transform: rotate(90deg);  
+    transition: all  cubic-bezier(0.4, 0.58, 0.35, 1.4) 0.05s;
+}
+.hour-hand{
+    width: 30%;
+    margin-left: 20%;
+    background-color: crimson;
+}
+.min-hand{
+    width: 45%;
+    margin-left: 5%;
+}
+.timing{
+    width: 500px;
+    height: 40px;
+    font-size: 5rem;
+    letter-spacing: 1rem;
+    font-family: 'Lexend Mega', sans-serif;
+    color: rgb(46, 63, 63);
+}
+.hourT{
+    color: crimson;
+}
+
+
