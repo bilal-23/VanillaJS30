@@ -27,7 +27,7 @@ label{
       font-size: 0.8rem;
   }
 img{
-    width: 700px;
+    max-width: 90%;
     height: 400px;
     padding: var(--spacing);
     background: var(--base);
