@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Canvas</title>
+    <style>
+        html,body{
+            margin: 0;
+        }
+        .draw{
+            border: 2px solid black;
+        }
+        #clear{
+            padding: 1rem 2rem;
+            font-size: 2rem;
+            border: 2px solid rgb(255, 255, 255);
+            letter-spacing: 0.2rem;
+            margin: 0px 20px;
+            background-color: coral;
+            color: white;
+            transition: all 0.8s;
+            border-radius: 2px;
+        }
+        #clear:active{
+            background-color: yellow;
+            border: 2px solid rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="draw" height="800" width="800"></canvas>
+    <div id="button">
+        <input type="button" id="clear" value="Clear">
+      </div>
+</body>
+<script>
+    const canvas = document.getElementById("draw");
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    ctx.strokeStyle = 'black'; //color
+    ctx.lineJoin = 'round'; //two line meets
+    ctx.lineCap = 'round' ; //end of line
+    ctx.lineWidth = 5;
+    let hue= 0;
+
+    let isDrawing = false ; 
+    let lastX = 0;
+    let lastY = 0;
+
+    function draw(e){
+        if(!isDrawing) return ; 
+        // console.log(e);
+        ctx.strokeStyle = `hsl(${hue},100%,50%)`;
+        ctx.beginPath();
+        ctx.moveTo( lastX , lastY );
+        ctx.lineTo( e.offsetX , e.offsetY );
+        ctx.stroke();
+        [lastX , lastY] = [e.offsetX, e.offsetY];
+        hue++;
+        if(hue>>360){
+            hue = 0;
+        }
+    }
+    
+    canvas.addEventListener('mousedown', (e) => {
+        isDrawing = true;
+        [lastX , lastY] = [e.offsetX, e.offsetY];
+    });
+    canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mouseup', () => isDrawing = false);
+    canvas.addEventListener('mouseout', () => isDrawing = false);
+
+    document.getElementById('clear').addEventListener('click', function() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        },false);
+</script>
+</html>
