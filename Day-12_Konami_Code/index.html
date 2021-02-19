@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konami Code</title>
+    <style>
+        .img{
+         visibility: hidden;
+            height: auto;
+            width: 500px;
+            background: cover;
+        }
+        .visible{
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+   <h1> <em class="text">type asdbvc</em></h1>
+   <img id="image" class="img" src="https://images.unsplash.com/photo-1612427634443-36c41c25dd99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max" alt="">
+</body>
+<script src="https://www.cornify.com/js/cornify.js"></script>
+<script>
+    'use strict'
+
+    let pressed = [];
+    const code = "asdbvc";
+
+    window.addEventListener('keyup', (e) =>{
+    pressed.push(e.key);
+
+    if(pressed.length>code.length){
+        pressed.shift();
+    }
+    if(pressed.join("")==code) {
+        // cornify_add();
+        document.getElementById('image').classList.toggle('visible');
+        console.log("image is visible now");
+    }
+
+});
+
+
+</script>
+</html>
