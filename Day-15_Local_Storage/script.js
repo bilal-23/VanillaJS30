@@ -12,7 +12,7 @@ function addItem(e) {
     const text = this.querySelector('[name=item]').value;
     const item = {
         text,
-        done: 'false'
+        done: false
     };
     // console.log(item);
     items.push(item);
