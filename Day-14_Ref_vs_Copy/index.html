@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference vs Copy</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //numbers
+    console.log("----NUMBERS----");
+    let age = 100;
+    let age2 = age ; 
+    console.log("age= "+age+ " age2= "+age2);
+    age = 200;
+    console.log("age= "+age+ " age2= "+age2+"\n\ncopy of age (age2) will not be updated\n\n"); //copy of age i.e age2 will not be updated
+
+    //strings
+    console.log("----STRINGS----");
+    let name = "John";
+    let name2 = name;
+    console.log("name= "+name+" name2= "+name2);
+    name = "snow";
+    console.log("name= "+name+" name2= "+name2+"\n\ncopy of name(name2) will not be updated\n\n");
+    
+    //arrays
+    console.log("----ARRAYS----");
+    let players = ['john','snow','harry','ron'];
+    let team = players;
+    const team2 = players.slice();
+    console.log("players");
+    console.log(players);
+    console.log("team");
+    console.log(team);
+    
+    
+    team[3]= "Shinchan";
+    console.log("players");
+    console.log(players);
+    console.log("team");
+    console.log(team);
+    console.log("team is not copy of array instead it is reference to the original array, that's why the value changes when we change the element in team \n\n");
+
+    //to make a copy call slice with  epmty parameter;
+    
+    console.log("players");
+    console.log(players);
+    console.log("team2, copy of player created using slice() method called on original array \n");
+    console.log(team2);
+    console.log("\n");
+
+    team2[3]= "dododo";
+    console.log("players");
+    console.log(players);
+    console.log("team2");
+    console.log(team2);
+    console.log("\n");
+    //changing copy of array doesnt change original array;
+
+    //you can create copy of arrays by spread or concat or ArrayFrom
+
+    let team3 = [...players];
+    let team4 = [].concat(players);
+    let team5 = Array.from(players);
+   
+    console.log("team3");
+    console.log(team3);
+    console.log("team4");
+    console.log(team4);
+    console.log("team5");
+    console.log(team5);
+    console.log("\n\n");
+
+    //objects
+     console.log("----OBJECTS----");
+     const person ={
+         name: 'john snow',
+         age: 30
+     };
+     const copy = person ; //  this makes a reference rather than copy, changing copy will make changes original object
+     const copy1 = Object.assign({}, person); //this will make a copy
+     copy1.number = 999;
+     console.table(copy1);
+     console.table(person);
+
+     // to make a copy of object use Object.assign({}, `object-Name`);
+
+    
+</script>
+</html>
