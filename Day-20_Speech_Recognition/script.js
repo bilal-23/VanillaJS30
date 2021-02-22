@@ -34,10 +34,10 @@ recognition.addEventListener(`result`, e =>{
     }
 
     if(transcript.includes('change colour')){
-        document.querySelector('p').style.color = 'red';
+        document.querySelector('.words').style.color = 'red';
     }
     if(transcript.includes('change font size')){
-        document.querySelector('p').style.fontSize = '4rem';
+        document.querySelector('.words').style.fontSize = '4rem';
     }
 
 })
