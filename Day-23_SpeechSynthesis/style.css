@@ -1,0 +1,121 @@
+html {
+    font-size: 10px;
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: gray;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    transition: all ease 5s;
+  }
+  
+  .voiceinator {
+      /* border:2px solid red; */
+    padding: 2rem;
+    width: 50rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+    position: relative;
+    background: white;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+  }
+  
+  h1 {
+    width: calc(100% + 4rem);
+    margin: -2rem 0 2rem -2rem;
+    padding: .5rem;
+    background: #ffc600;
+    border-bottom: 5px solid #F3C010;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 100;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 3px 3px 0 #F3C010;
+  }
+  
+  .voiceinator input,
+  .voiceinator button,
+  .voiceinator select,
+  .voiceinator textarea {
+    width: 100%;
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border: 0;
+    font-size: 2rem;
+    background: #F7F7F7;
+    outline: 0;
+  }
+  
+  textarea {
+    height: 20rem;
+  }
+  
+  input[type="select"] {
+  
+  }
+  
+  .voiceinator button {
+    background: #ffc600;
+    border: 0;
+    width: 49%;
+    float: left;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 0;
+    font-size: 2rem;
+    border-bottom: 5px solid #F3C010;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  
+  .voiceinator button:active {
+    top: 2px;
+  }
+  
+  .voiceinator button:nth-of-type(1) {
+    margin-right: 2%;
+  }
+ @media (max-width : 768px ){
+  .voiceinator{
+    width:50%;
+  }
+  h1{
+    font-size:3rem;
+  }
+  .voiceinator input,
+  .voiceinator button,
+  .voiceinator select,
+  .voiceinator textarea {
+    font-size: 1.5rem;
+  }
+  textarea {
+    height: 10rem;
+  }
+  .voiceinator button{
+    font-size: 1.5rem;
+  }
+ }
+
+ @media (max-width: 550px){
+  .voiceinator{
+    width:80%;
+  }
+  .voiceinator input,
+  .voiceinator button,
+  .voiceinator select,
+  .voiceinator textarea {
+    padding:5px;
+  }
+ }
