@@ -4,7 +4,16 @@ const scoreBoard = document.querySelector('.score');
 let lastHole; 
 let timeUp = false;
 let score;
+const highscore = document.querySelector('.hscore');
+let hscore = JSON.parse(localStorage.getItem('highscore')) || 0;
+highscore.textContent = hscore;
 
+
+function resetHighScore(){
+    localStorage.removeItem('highscore');
+    hscore = 0;
+    highscore.textContent = hscore;
+}
 
 function randomTime(min,max){  //in milliseconds
     return Math.random() * (max-min)+min ;
@@ -36,20 +45,33 @@ function peep(){
 }
 
 function startGame(){
+
     scoreBoard.textContent = 0 ;
     score = 0
     timeUp = false;
     peep();
-    setTimeout(()=> timeUp = true, 10000)
+    setTimeout(()=>{
+        timeUp=true;
+        if(score > hscore){
+            console.log("score is greater");
+            highscore.textContent = score;
+            localStorage.setItem('highscore', score);
+            console.log("hscore:",hscore);  
+        }
+    },10000)
 }
 
 function bonk(e){
 if(!e.isTrusted) return ; //cheater
 score++;    
 this.classList.remove('up');
-console.log('score:', score)
+// console.log('score:', score)
 scoreBoard.textContent = score;
+localStorage.setItem('highscore', score);
+console.log("hscore:",hscore)
+
 }
+
 
 
 moles.forEach(mole => mole.addEventListener('click', bonk));

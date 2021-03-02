@@ -70,12 +70,12 @@ html {
     margin-left: 2rem;
     border: 0;
     cursor: pointer;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 2rem;
     text-transform: uppercase;
-    padding: 1rem;
+    padding: 0.5rem;
     font-family: 'Inconsolata', monospace;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
   }
   button:hover,
   button:focus {
@@ -87,6 +87,13 @@ html {
     transform: translate(3px, 3px);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   }
+  .highscore{
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+    margin-left: 2rem;
+  }
+  
   .hole.up .mole {
     top: 0;
   }
