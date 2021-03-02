@@ -17,7 +17,7 @@ html {
     text-align: center;
     font-size: 8rem;
     line-height: 1;
-    margin-bottom: 0;
+    margin-bottom: 20px;
   }
   .container{
     display: flex;
@@ -108,6 +108,9 @@ button{
   align-self: flex-start;
   padding: 0.5rem;
 }
+.highscore{
+  font-size: 1.5rem;
+}
 .game{
   height: 400px;
 }
@@ -120,6 +123,9 @@ button{
 
   h1{
     font-size: 3rem;
+  }
+  .highscore{
+    font-size: 1rem;
   }
   button{
     font-size: 1rem;
