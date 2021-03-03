@@ -10,11 +10,13 @@ body {
   }
   .wrapper {
       /* border: 2px solid red; */
-    width: 51%;
+    width: 65%;
     display: flex;
   }
   video {
     box-shadow: 0 0 1px 3px rgba(0,0,0,0.1);
+    width : 85%;
+     height : 100%;
     /* display: hidden; */
   }
   .speed {
